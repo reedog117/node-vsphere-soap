@@ -1,0 +1,12 @@
+{
+  "name": "node-vsphere-soap",
+  "version": "0.0.1",
+  "description": "interface to vSphere SOAP/WSDL from node for interfacing with vCenter or ESXi",
+  "main": "app.js",
+  "author": "puff",
+  "dependencies": {
+    "lodash": "^3.1.0",
+    "soap": "^0.6.1"
+  },
+  "devDependencies": {}
+}
