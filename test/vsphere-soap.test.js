@@ -19,11 +19,11 @@ var expect = Code.expect;
 
 var VItest = new vc.Client(TestCreds.vCenterIP, TestCreds.vCenterUser, TestCreds.vCenterPassword, false);
 
-describe('vCenterClient object initialization:', function(){
+describe('Client object initialization:', function(){
 
-  it('provides a successful login', {timeout: 20000}, function(done) {
+  it('provides a successful login', {timeout: 5000}, function(done) {
     
-    VItest.on('ready', function() {
+    VItest.once('ready', function() {
       expect(VItest.userName).to.exist();
       //console.log('logged in user : ' + VItest.userName);
       expect(VItest.fullName).to.exist();
@@ -38,50 +38,58 @@ describe('vCenterClient object initialization:', function(){
 
 });
 
-describe('v')
+describe('Client reconnection test:', function(){
+
+  it('can successfully reconnect', {timeout: 5000}, function(done) {
+
+    VItest.runCommand('Logout', { _this: VItest.serviceContent.sessionManager })
+      .once('result', function(result){
+        //console.log('logout result : ' + util.inspect(result, {depth: null} ));
+        // we're logged out, so now run another command to force logging in again
+        VItest.runCommand('CurrentTime', { _this: 'ServiceInstance'} )
+          .once('result', function(result) {
+            expect(result.returnval).to.be.a.date();
+            done();
+          });
+      });
+  });
+});
 
 // these tests don't work yet
-describe('vCenterConnectionInstance query commands:', function(){
+describe('Client tests - query commands:', function(){
 
-  // make sure we have a successfully authenticated instance
-  // before testing
-
-  /*before( {timeout: 5000}, function(done){
-    VItest.on('authenticated', function() {
-      // get property collector
-      propertyCollector = VItest.serviceContent.propertyCollector;
-      // get view manager
-      viewManager = VItest.serviceContent.viewManager;
-      done();
+  it('retrieves current time', {timeout: 5000}, function(done){
+    // get property collector
+    //var propertyCollector = VItest.serviceContent.propertyCollector;
+    // get view manager
+    //var viewManager = VItest.serviceContent.viewManager;
+    VItest.runCommand('CurrentTime', { _this: 'ServiceInstance'} )
+      .once('result', function(result){
+        //console.log('result retrieved : ' + util.inspect(result.returnval));
+        expect(result.returnval).to.be.a.date();
+        done();
     });
+  }); 
+
+
+  it('retrieves current time 2 (check for event clobbering)', {timeout: 5000}, function(done){
+    // get property collector
+    //var propertyCollector = VItest.serviceContent.propertyCollector;
+    // get view manager
+    //var viewManager = VItest.serviceContent.viewManager;
+    VItest.runCommand('CurrentTime', { _this: 'ServiceInstance'} )
+      .once('result', function(result){
+        //console.log('result retrieved : ' + util.inspect(result.returnval));
+        expect(result.returnval).to.be.a.date();
+        done();
+    });
+  }); 
+
+  it('can obtain the VM inventory', {timeout: 20000}, function(done){
+
+
+
+    done();
+
   });
-  */
-
-  it('retrieves current time', {timeout: 20000}, function(done){
-    // get property collector
-    //var propertyCollector = VItest.serviceContent.propertyCollector;
-    // get view manager
-    //var viewManager = VItest.serviceContent.viewManager;
-    VItest.runCommand('CurrentTime', { _this: 'ServiceInstance'} )
-      .on('result', function(result){
-        //console.log('result retrieved : ' + util.inspect(result.returnval));
-        expect(result.returnval).to.be.a.date();
-        done();
-    });
-  }); 
-
-
-  it('retrieves current time 2 (check for event clobbering)', {timeout: 20000}, function(done){
-    // get property collector
-    //var propertyCollector = VItest.serviceContent.propertyCollector;
-    // get view manager
-    //var viewManager = VItest.serviceContent.viewManager;
-    VItest.runCommand('CurrentTime', { _this: 'ServiceInstance'} )
-      .on('result', function(result){
-        //console.log('result retrieved : ' + util.inspect(result.returnval));
-        expect(result.returnval).to.be.a.date();
-        done();
-    });
-  }); 
-
 });
