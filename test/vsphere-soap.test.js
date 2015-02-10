@@ -87,9 +87,13 @@ describe('Client tests - query commands:', function(){
 
   it('can obtain the VM inventory', {timeout: 20000}, function(done){
 
+    // this is the equivalent to 
+
+
+
+
 
 
     done();
-
   });
 });
