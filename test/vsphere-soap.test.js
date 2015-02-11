@@ -9,7 +9,7 @@ var Lab = require('lab');
 var util = require('util');
 var lab = exports.lab = Lab.script();
 var vc = require('../lib/client');
-var TestCreds = require('../config.js').vCenterTestCreds
+var TestCreds = require('../config-test.js').vCenterTestCreds
 var _ = require('lodash');
 
 
