@@ -5,7 +5,7 @@ This is a Node.js module to connect to VMware vCenter servers and/or ESXi hosts 
 This is very much in alpha. 
 
 ## Version
-0.1
+0.0.1
 
 ## Installation
 
