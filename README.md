@@ -45,7 +45,7 @@ $ npm install node-vsphere-soap --save
 
 ### To run a command:
 
-    var vcCmd = vc.Client( commandToRun, arguments );
+    var vcCmd = vc.runCommand( commandToRun, arguments );
     vcCmd.once('result', function( result, raw, soapHeader) {
       // handle results
     });
