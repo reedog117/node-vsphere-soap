@@ -4,6 +4,10 @@ This is a Node.js module to connect to VMware vCenter servers and/or ESXi hosts 
 
 This is very much in alpha. 
 
+## Authors
+
+  - Patrick C - [@reedog117]
+
 ## Version
 0.0.1
 
@@ -114,4 +118,5 @@ MIT
 [code]:https://github.com/hapijs/code
 [lab]:https://github.com/hapijs/lab
 [lodash]:https://lodash.com/
+[@reedog117]:http://www.twitter.com/reedog117
 
