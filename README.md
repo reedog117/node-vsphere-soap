@@ -17,8 +17,8 @@ $ npm install node-vsphere-soap --save
 
 ### To connect to a vCenter server:
 
-    require('node-vsphere-soap');
-    var vc = new Client(host, user, password, sslVerify);
+    var nvs = require('node-vsphere-soap');
+    var vc = new nvs.Client(host, user, password, sslVerify);
     vc.once('ready', function() {
       // perform work here
     });
