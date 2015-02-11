@@ -5,7 +5,7 @@
   "main": "lib/client.js",
   "author": "reedog117",
   "scripts": {
-    "test": "lab",
+    "test": "lab"
   },
   "repository": {
     "type": "git",
