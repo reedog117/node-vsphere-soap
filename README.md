@@ -90,13 +90,16 @@ Want to contribute? Great!
 
 I have been testing on a Mac with node v0.10.36 and both ESXi and vCenter 5.5.
 
+To edit tests, edit the file **test/vsphere-soap.test.js**
+
+To point the module at your own vCenter/ESXi host, edit **config-test.stub.js** and save it as **config-test.js**
+
 To run test scripts:
 
 ```sh
 $ npm run-script test
 ```
 
-To edit tests, edit the file **tests/vsphere-soap.test.js**
 
 License
 ----
