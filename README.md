@@ -9,7 +9,7 @@ This is very much in alpha.
   - Patrick C - [@reedog117]
 
 ## Version
-0.0.1
+0.0.2
 
 ## Installation
 
