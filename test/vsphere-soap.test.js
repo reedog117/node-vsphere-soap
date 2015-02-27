@@ -48,7 +48,13 @@ describe('Client reconnection test:', function(){
           .once('result', function(result) {
             expect(result.returnval).to.be.a.date();
             done();
+          })
+          .once('error', function(err) {
+            console.error(err);
           });
+      })
+      .once('error', function(err) {
+        console.error(err);
       });
   });
 });
@@ -130,7 +136,11 @@ describe('Client tests - query commands:', function(){
       .once('result', function(result, raw){
 
         expect(result.returnval.objects).to.exist();
-        expect(result.returnval.objects.obj.attributes.type).to.be.equal('VirtualMachine');
+        if( _.isArray(result.returnval.objects) ) {
+          expect( _.sample(result.returnval.objects).obj.attributes.type).to.be.equal('VirtualMachine');
+        } else {
+          expect(result.returnval.objects.obj.attributes.type).to.be.equal('VirtualMachine');
+        }
         done();
       })
       .once('error', function(err){

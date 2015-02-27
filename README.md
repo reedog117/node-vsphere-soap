@@ -101,7 +101,7 @@ To point the module at your own vCenter/ESXi host, edit **config-test.stub.js** 
 To run test scripts:
 
 ```sh
-$ npm run-script test
+$ npm test
 ```
 
 
