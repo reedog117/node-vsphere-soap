@@ -1,3 +1,4 @@
 config-test.js
 npm-debug.log
 node_modules
+*sublime-*
