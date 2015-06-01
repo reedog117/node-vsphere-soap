@@ -1,6 +1,6 @@
 {
   "name": "node-vsphere-soap",
-  "version": "0.0.2-2",
+  "version": "0.0.2-3",
   "description": "interface to vSphere SOAP/WSDL from node for interfacing with vCenter or ESXi",
   "main": "lib/client.js",
   "author": "reedog117",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "lodash": "3.x.x",
-    "soap": "0.8.x",
+    "soap": "0.9.x",
     "soap-cookie": "0.10.x"
   },
   "devDependencies": {
