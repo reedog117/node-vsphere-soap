@@ -1,5 +1,7 @@
 # node-vsphere-soap
 
+[![Join the chat at https://gitter.im/reedog117/node-vsphere-soap](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/reedog117/node-vsphere-soap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is a Node.js module to connect to VMware vCenter servers and/or ESXi hosts and perform operations using the [vSphere Web Services API]. If you're feeling really adventurous, you can use this module to port vSphere operations from other languages (such as the Perl, Python, and Go libraries that exist) and have fully native Node.js code controlling your VMware virtual infrastructure!
 
 This is very much in alpha. 
