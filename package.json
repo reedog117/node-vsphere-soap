@@ -15,9 +15,9 @@
     "url": "https://github.com/reedog117/node-vsphere-soap/issues"
   },
   "dependencies": {
-    "lodash": "3.x.x",
-    "soap": "0.8.0",
-    "soap-cookie": "0.10.x"
+    "lodash": "^3.10.1",
+    "soap": "^0.8.0",
+    "soap-cookie": "^0.10.1"
   },
   "devDependencies": {
     "code": "1.x.x",
